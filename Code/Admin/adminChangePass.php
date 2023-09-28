@@ -48,7 +48,7 @@ include('../dbConnection.php');
            <input type="text" class="form-control" id="inputnewpassword" placeholder="New Password" name="adminPass">
          </div>
          <button type="submit" class="btn btn-danger mr-4 mt-4" name="adminPassUpdatebtn">Update</button>
-         <button type="reset" class="btn btn-secondary mt-4">Reset</button>
+         <button type="reset" class="btn btn-secondary mt-4">Reset</button> <!-- the name of the class written was wrong -->
          <?php if(isset($passmsg)) {echo $passmsg; } ?>
        </form>
      </div>
