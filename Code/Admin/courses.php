@@ -46,7 +46,7 @@ include('../dbConnection.php');
       } else {
         echo "0 Result";
       }
-      if(isset($_REQUEST['delete'])){
+      if(isset($_REQUEST['delete'])){// delete button was not properly intergreted 
        $sql = "DELETE FROM course WHERE course_id = {$_REQUEST['id']}";
        if($conn->query($sql) === TRUE){
          // echo "Record Deleted Successfully";
