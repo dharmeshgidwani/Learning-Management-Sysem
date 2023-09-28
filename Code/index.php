@@ -12,7 +12,7 @@
         <div class="vid-overlay"></div>
       </div>
       <div class="vid-content" >
-        <h1 class="my-content">Welcome to iSchool</h1>
+        <h1 class="my-content">Welcome to TechnoStacks!</h1>
         <small class="my-content">Learn and Implement</small><br />
         <?php    
               if(!isset($_SESSION['is_login'])){
@@ -93,7 +93,7 @@
         ?>
       </div>   <!-- End Most Popular Course 2nd Card Deck --> 
       <div class="text-center m-2">
-        <a class="btn btn-danger btn-sm" href="courses.php">View All Course</a> 
+        <a class="btn btn-danger btn-sm" href="courses.php">View All Courses</a> 
       </div>
     </div>  <!-- End Most Popular Course -->
 
@@ -157,7 +157,7 @@
         <div class="row text-center">
           <div class="col-sm">
             <h5>About Us</h5>
-              <p>iSchool provides universal access to the world’s best education, partnering with top universities and organizations to offer courses online.</p>
+              <p>TechnoStacks provides universal access to the world’s best education, partnering with top universities and organizations to offer courses online.</p>
           </div>
           <div class="col-sm">
             <h5>Category</h5>
@@ -169,7 +169,7 @@
           </div>
           <div class="col-sm">
             <h5>Contact Us</h5>
-            <p>iSchool Pvt Ltd <br> Near Police Camp II <br> Bokaro, Jharkhand <br> Ph. 000000000 </p>
+            <p>TechnoStacks Pvt Ltd <br> Near Police Camp II <br> Bokaro, Jharkhand <br> Ph. 000000000 </p>
           </div>
         </div>
       </div>

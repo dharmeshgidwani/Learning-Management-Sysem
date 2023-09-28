@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.1
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 16, 2020 at 04:36 PM
--- Server version: 10.4.8-MariaDB
--- PHP Version: 7.3.10
+-- Generation Time: Sep 28, 2023 at 08:01 PM
+-- Server version: 8.0.31
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -29,11 +28,11 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `admin` (
-  `admin_id` int(11) NOT NULL,
-  `admin_name` varchar(255) COLLATE utf8_bin NOT NULL,
-  `admin_email` varchar(255) COLLATE utf8_bin NOT NULL,
-  `admin_pass` varchar(255) COLLATE utf8_bin NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+  `admin_id` int NOT NULL,
+  `admin_name` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL,
+  `admin_email` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL,
+  `admin_pass` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_bin;
 
 --
 -- Dumping data for table `admin`
@@ -49,15 +48,15 @@ INSERT INTO `admin` (`admin_id`, `admin_name`, `admin_email`, `admin_pass`) VALU
 --
 
 CREATE TABLE `course` (
-  `course_id` int(11) NOT NULL,
-  `course_name` text COLLATE utf8_bin NOT NULL,
-  `course_desc` text COLLATE utf8_bin NOT NULL,
-  `course_author` varchar(255) COLLATE utf8_bin NOT NULL,
-  `course_img` text COLLATE utf8_bin NOT NULL,
-  `course_duration` text COLLATE utf8_bin NOT NULL,
-  `course_price` int(11) NOT NULL,
-  `course_original_price` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+  `course_id` int NOT NULL,
+  `course_name` text CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL,
+  `course_desc` text CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL,
+  `course_author` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL,
+  `course_img` text CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL,
+  `course_duration` text CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL,
+  `course_price` int NOT NULL,
+  `course_original_price` int NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_bin;
 
 --
 -- Dumping data for table `course`
@@ -80,15 +79,15 @@ INSERT INTO `course` (`course_id`, `course_name`, `course_desc`, `course_author`
 --
 
 CREATE TABLE `courseorder` (
-  `co_id` int(11) NOT NULL,
-  `order_id` varchar(255) COLLATE utf8_bin NOT NULL,
-  `stu_email` varchar(255) COLLATE utf8_bin NOT NULL,
-  `course_id` int(11) NOT NULL,
-  `status` varchar(255) COLLATE utf8_bin NOT NULL,
-  `respmsg` text COLLATE utf8_bin NOT NULL,
-  `amount` int(11) NOT NULL,
+  `co_id` int NOT NULL,
+  `order_id` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL,
+  `stu_email` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL,
+  `course_id` int NOT NULL,
+  `status` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL,
+  `respmsg` text CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL,
+  `amount` int NOT NULL,
   `order_date` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_bin;
 
 --
 -- Dumping data for table `courseorder`
@@ -108,10 +107,10 @@ INSERT INTO `courseorder` (`co_id`, `order_id`, `stu_email`, `course_id`, `statu
 --
 
 CREATE TABLE `feedback` (
-  `f_id` int(11) NOT NULL,
-  `f_content` text COLLATE utf8_bin NOT NULL,
-  `stu_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+  `f_id` int NOT NULL,
+  `f_content` text CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL,
+  `stu_id` int NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_bin;
 
 --
 -- Dumping data for table `feedback`
@@ -132,13 +131,13 @@ INSERT INTO `feedback` (`f_id`, `f_content`, `stu_id`) VALUES
 --
 
 CREATE TABLE `lesson` (
-  `lesson_id` int(11) NOT NULL,
-  `lesson_name` text COLLATE utf8_bin NOT NULL,
-  `lesson_desc` text COLLATE utf8_bin NOT NULL,
-  `lesson_link` text COLLATE utf8_bin NOT NULL,
-  `course_id` int(11) NOT NULL,
-  `course_name` text COLLATE utf8_bin NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+  `lesson_id` int NOT NULL,
+  `lesson_name` text CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL,
+  `lesson_desc` text CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL,
+  `lesson_link` text CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL,
+  `course_id` int NOT NULL,
+  `course_name` text CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_bin;
 
 --
 -- Dumping data for table `lesson`
@@ -168,13 +167,13 @@ INSERT INTO `lesson` (`lesson_id`, `lesson_name`, `lesson_desc`, `lesson_link`, 
 --
 
 CREATE TABLE `student` (
-  `stu_id` int(11) NOT NULL,
-  `stu_name` varchar(255) COLLATE utf8_bin NOT NULL,
-  `stu_email` varchar(255) COLLATE utf8_bin NOT NULL,
-  `stu_pass` varchar(255) COLLATE utf8_bin NOT NULL,
-  `stu_occ` varchar(255) COLLATE utf8_bin NOT NULL,
-  `stu_img` text COLLATE utf8_bin NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+  `stu_id` int NOT NULL,
+  `stu_name` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL,
+  `stu_email` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL,
+  `stu_pass` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL,
+  `stu_occ` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_bin DEFAULT NULL,
+  `stu_img` text CHARACTER SET utf8mb3 COLLATE utf8mb3_bin
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_bin;
 
 --
 -- Dumping data for table `student`
@@ -187,7 +186,8 @@ INSERT INTO `student` (`stu_id`, `stu_name`, `stu_email`, `stu_pass`, `stu_occ`,
 (174, 'Scarlet Witch', 'witch@example.com', '123456', 'Web Designer', '../image/stu/student3.jpg'),
 (176, ' Shaktiman', 'shaktiman@ischool.com', '123456', 'Software ENgg', '../image/stu/shaktiman.jpg'),
 (178, ' Mario', 'mario@ischool.com', '1234567', ' Web Dev', '../image/stu/super-mario-2690254_1280.jpg'),
-(182, ' sonam', 'sonam@gmail.com', '123456', ' Web Dev', '../image/stu/student2.jpg');
+(182, ' sonam', 'sonam@gmail.com', '123456', ' Web Dev', '../image/stu/student2.jpg'),
+(183, 'sanskar', 'sanskargautam93@yahoo.com', 'sanskar823', NULL, NULL);
 
 --
 -- Indexes for dumped tables
@@ -238,37 +238,37 @@ ALTER TABLE `student`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `admin_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `course`
 --
 ALTER TABLE `course`
-  MODIFY `course_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `course_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `courseorder`
 --
 ALTER TABLE `courseorder`
-  MODIFY `co_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `co_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `feedback`
 --
 ALTER TABLE `feedback`
-  MODIFY `f_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `f_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `lesson`
 --
 ALTER TABLE `lesson`
-  MODIFY `lesson_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+  MODIFY `lesson_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
 -- AUTO_INCREMENT for table `student`
 --
 ALTER TABLE `student`
-  MODIFY `stu_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=183;
+  MODIFY `stu_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=184;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

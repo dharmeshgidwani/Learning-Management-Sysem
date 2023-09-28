@@ -24,7 +24,7 @@ include('../dbConnection.php');
   </form>
   <?php
   $sql = "SELECT course_id FROM course";
-  $result = $conn->query($sql);
+  $result = $conn->query($sql); //select query was not defined properly and result variable was not loading data 
   while($row = $result->fetch_assoc()){
     if(isset($_REQUEST['checkid']) && $_REQUEST['checkid'] == $row['course_id']){
       $sql = "SELECT * FROM course WHERE course_id = {$_REQUEST['checkid']}";
