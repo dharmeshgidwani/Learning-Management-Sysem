@@ -59,7 +59,7 @@ include('../dbConnection.php');
      ?>
   </div>
  </div>  <!-- div Row close from header -->
- <div><a class="btn btn-danger box" href="./addCourse.php"><i class="fas fa-plus fa-2x"></i></a></div>
+ <div><a class="btn btn-danger box" href="./addCourse.php"><i class="fas fa-plus fa-2x"></i></a></div> <!-- //wrong php file was integrated in the href   -->
 </div>  <!-- div Conatiner-fluid close from header -->
 <?php
 include('./adminInclude/footer.php'); 
