@@ -30,7 +30,7 @@ include('../dbConnection.php');
         </tr>
        </thead>
        <tbody>';
-        while($row = $result->fetch_assoc()){
+        while($row = $result->fetch_assoc()){// while condition was defined properly
           echo '<tr>';
           echo '<th scope="row">'.$row["stu_id"].'</th>';
           echo '<td>'. $row["stu_name"].'</td>';
